@@ -12,8 +12,13 @@ import messageRoutes from "./routes/message.route.js";
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
-// app.use(cors());
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://localhost:5173" || "http://localhost:5174",
+    credentials: true,
+  })
+);
 
 app.use("/api/auth/", authRoutes);
 app.use("/api/message/", messageRoutes);

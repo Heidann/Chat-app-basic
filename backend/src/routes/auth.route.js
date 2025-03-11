@@ -9,7 +9,7 @@ router.post("/login", UserCTL.login);
 
 router.post("/logout", UserCTL.logout);
 
-router.put("/updateProfile", protectRoute, UserCTL.updateProfile);
+router.put("/update-profile", protectRoute, UserCTL.updateProfile);
 
 router.get("/check", protectRoute, UserCTL.checkAuth);
 
